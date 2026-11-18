@@ -25,7 +25,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run Warren Buffett Agent
-        run: python main.py
+        run: python generate_report.py
 
       - name: Send Report via Email
         uses: dawidd6/action-send-mail@v3
@@ -35,8 +35,8 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "TASI Warren Buffett Agent Daily Report - ${{ github.run_id }}"
+          subject: "TASI Warren Buffett Agent Report - ${{ github.run_id }}"
           to: zaheradelalawar@gmail.com
           from: "TASI Warren Buffett Agent <${{ secrets.MAIL_USERNAME }}>"
           body: "Attached is your automated daily TASI Warren Buffett fundamental valuation and stock report."
-          attachments: "output/*.html"
+          attachments: "outputs/*.html"

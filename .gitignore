@@ -1,0 +1,10 @@
+﻿venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+output/*.html
+output/*.xlsx
+output/*.csv
+*.xlsx
+*.csv
